@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản</title>
+    <style>
+        h1 {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 80px;
+            font-size: 45px;
+}
+        body {
+           
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: #1d8534;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            text-align: center;
+        }
+        button {
+            width: 80%;
+            padding: 10px;
+            background-color: #080808;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hệ Thống Giám Sát Ra Vào</h1>
+    <div class="container">
+        <h2>Đăng ký vân tay</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Tên của bạn" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng Ký</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            
+            if (name && email && password) {
+                alert('Đăng ký thành công!');
+            } else {
+                alert('Vui lòng nhập đầy đủ thông tin!');
+            }
+        });
+    </script>
+</body>
+</html>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            
+            if (name && email && password) {
+                alert('Đăng ký thành công!');
+            } else {
+                alert('Vui lòng nhập đầy đủ thông tin!');
+            }
+        });
+    </script>
+</body>
+</html>
