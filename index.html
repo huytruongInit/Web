@@ -9,13 +9,22 @@
             text-align: center;
             width: 100%;
             position: absolute;
-            top: 80px;
-            font-size: 45px;
+            top: 50px;
+            font-size: 35px;
+            color: rgb(251, 251, 251);
+
 }
         body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background: url('https://nld.mediacdn.vn/291774122806476800/2023/1/8/33-1673147417818531950343.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
            
             font-family: 'Times New Roman', Times, serif, sans-serif;
-            background-color: #1d8534;
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +52,7 @@
         button {
             width: 80%;
             padding: 10px;
-            background-color: #080808;
+            background-color: green;
             border: none;
             color: white;
             border-radius: 4px;
@@ -56,20 +65,19 @@
     </style>
 </head>
 <body>
-    <h1>Hệ Thống Giám Sát Ra Vào</h1>
+    <h1 class="title">Hệ Thống Giám Sát Ra Vào</h1>
     <div class="container">
-        <h2>Đăng ký vân tay</h2>
-        <form id="registerForm">
+        <h2 class="subtitle">Đăng ký vân tay</h2>
+        <form class="form">
             <div class="input-group">
-                <input type="text" id="name" placeholder="Tên của bạn" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Mật khẩu" required>
-                <button type="submit">Đăng Ký</button>
+                <input class="input-field" type="text" placeholder="Tên của bạn" required>
+                <input class="input-field" type="email" placeholder="Email" required>
+                <input class="input-field" type="password" placeholder="Mật khẩu" required>
+                <button class="submit-button" type="submit">Đăng Ký</button>
             </div>
         </form>
     </div>
-
-    <script src="dangky.js"></script>
+   
 </body>
 </html>
     

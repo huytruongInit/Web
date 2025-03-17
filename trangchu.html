@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Ra Vào Chung Cư</title>
+    <style>
+        h1 {
+            text-align: center;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(27, 1, 1);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 200px;
+            background: #1e1e1e;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .filter-container {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-container input, .filter-container button {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        .filter-container button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .table-container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 600px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #333;
+            text-align: left;
+        }
+        th {
+            background: #333;
+        }
+        .status-in {
+            color: lightgreen;
+        }
+        .status-out {
+            color: red;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                text-align: center;
+            }
+            .content {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .filter-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            table {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <p>Dashboard</p>
+        <p>Lịch sử ra vào</p>
+        <p>Cài đặt</p>
+        <p>Đăng ký</p>
+    </div>
+    <div class="content">
+        <h1>Lịch sử ra vào nhà Huy</h1>
+
+        <div class="filter-container">
+            <label for="from-date">Từ ngày:</label>
+            <input type="date" id="from-date">
+            <label for="to-date">Đến ngày:</label>
+            <input type="date" id="to-date">
+            <button onclick="filterRecords()">Lọc</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ và tên</th>
+                    <th>Phương thức ra vào</th>
+                    <th>Thời Gian</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Vũ Quốc</td>
+                    <td>Vân tay</td>
+                    <td>2025-03-17 08:00</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Hồ Giang Trường</td>
+                    <td>RFID</td>
+                    <td>2025-03-16 17:30</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
