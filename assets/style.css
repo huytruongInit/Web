@@ -1,0 +1,203 @@
+/* import font chữ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* tạo biến: màu sắc, font chữ */
+:root {
+    --color-general: #43AD8A;               /* màu chính của trang web */
+    --font-general: "Roboto", sans-serif;     /* font chữ sử dụng */
+
+    --color-hover-active: #298163;
+
+    /* white mode */
+    --w-color-primary:#08080A;
+    --w-color-secondary: #5B5B60;
+    --w-color-third: #F2F4F7; /* có dùng đừng xóa*/
+
+
+    --w-color-hover-primary: #E4E6E9;
+
+    /* black mode */
+    /* chưa có */
+
+
+    /* 
+        #7A92DF: màu hover vào chữ
+    */
+}
+
+/* ------------------------------------------------------------------ */
+/* --------------------- SET GIÁ TRỊ MẶC ĐỊNH CHO WEB --------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--w-color-third);
+    font-family: var(--font-general);
+    margin: 0px
+}
+/* ----------------- HẾT SET GIÁ TRỊ MẶC ĐỊNH CHO WEB --------------- */
+/* ------------------------------------------------------------------ */
+
+/* container */
+.container {
+    width: 1180px;
+    margin: 0px auto;
+}
+/* hết container */
+
+/* wrap */
+.wrap {
+    display: flex;
+    gap: 20px;
+}
+/* hết wrap */
+
+/* menu */
+.menu {
+    width: 250px;
+}
+
+.menu--main {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--w-color-third);
+    padding: 10px 5px;
+}
+
+.menu--list {
+    /* reset thẻ ul li */
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu--list .menu--item {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.menu--list .menu--item a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--w-color-primary);
+    font-size: 16px;
+}
+
+.menu--main .menu--collapse {
+    cursor: pointer;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.menu--list .menu--item:hover, .menu--main .menu--collapse:hover {
+    background-color: var(--w-color-hover-primary);
+}
+/* hết menu */
+
+/* content */
+.content {
+    flex: 1;
+}
+
+.content .content--wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content--header {
+    /*  */
+    margin: 5px 5px 0px 0px;
+    padding: 12px 8px;
+    border-radius: 6px;
+
+    /* style */
+    background-color: white;
+
+}
+
+.content--body {
+    /*  */
+    margin: 5px 5px 0px 0px;
+    padding: 8px;
+    border-radius: 6px;
+    height: 100vh;
+    
+    /* style */
+    background-color: white;
+}
+
+.content--body .content--body-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* hết content */
+
+/* form search */
+.form--search {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--w-color-secondary);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0px 5px;
+    height: 36px;
+}
+
+.form--search input {
+    order: 1;
+    flex: 1;
+    border: 0px;
+    outline: none;
+    padding: 6px 8px;
+    font-size: 16px;
+}
+
+.form--search button {
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.form--search:focus {
+    border: 1px solid var(--color-general);
+}
+/* hết form search */
+
+
+/* box title */
+.box-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0px;   /* trên dưới, trái phải*/
+    text-transform: uppercase; /* chuyển chữ sang in hoa hết*/
+}
+/* hết box title */
+
+
+/* button */
+.button {
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.button-green {
+    cursor: pointer;
+    background-color: var(--color-general);
+    color: var(--w-color-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button-green i {
+    font-weight: 400;
+}
+/* hết button */
