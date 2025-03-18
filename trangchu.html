@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch Sử Ra Vào Chung Cư</title>
     <style>
-        h1 {
+        h1
+        {
             text-align: center;
-}
+        }
+        :root {
+            --bg-color: rgb(13, 13, 13);
+            --text-color: white;
+            --sidebar-bg: #1e1e1e;
+            --table-bg: #1e1e1e;
+            --table-border: #333;
+            --button-bg: #007bff;
+            --button-text: white;
+        }
+        
+        .light-mode {
+            --bg-color: white;
+            --text-color: black;
+            --sidebar-bg: #f4f4f4;
+            --table-bg: #ffffff;
+            --table-border: #ddd;
+            --button-bg: #0056b3;
+            --button-text: white;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color:rgb(27, 1, 1);
-            color: white;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
         }
         .sidebar {
-            width: 200px;
-            background: #1e1e1e;
+            width: 190px;
+            background: var(--sidebar-bg);
             padding: 20px;
             height: 100vh;
             position: fixed;
@@ -33,10 +54,10 @@
             flex-grow: 1;
         }
         .filter-container {
-            background: #1e1e1e;
+            background: var(--sidebar-bg);
             padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -47,12 +68,12 @@
             border: none;
         }
         .filter-container button {
-            background: #007bff;
-            color: white;
+            background: var(--button-bg);
+            color: var(--button-text);
             cursor: pointer;
         }
         .table-container {
-            background: #1e1e1e;
+            background: var(--table-bg);
             padding: 20px;
             border-radius: 10px;
             overflow-x: auto;
@@ -65,17 +86,22 @@
         }
         th, td {
             padding: 10px;
-            border: 1px solid #333;
+            border: 1px solid var(--table-border);
             text-align: left;
         }
         th {
-            background: #333;
+            background: var(--table-border);
         }
-        .status-in {
-            color: lightgreen;
-        }
-        .status-out {
-            color: red;
+        .toggle-mode {
+            position: absolute;
+            top: 650px;
+            right: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: var(--button-bg);
+            color: var(--button-text);
+            cursor: pointer;
         }
         @media (max-width: 768px) {
             .sidebar {
@@ -99,16 +125,16 @@
     </style>
 </head>
 <body>
+    <button class="toggle-mode" onclick="toggleMode()">Chuyển đổi giao diện</button>
     <div class="sidebar">
         <h2>Menu</h2>
         <p>Dashboard</p>
         <p>Lịch sử ra vào</p>
         <p>Cài đặt</p>
-        <p>Đăng ký</p>
+        <p>Đăng ký vân tay mới</p>
     </div>
     <div class="content">
         <h1>Lịch sử ra vào nhà Huy</h1>
-
         <div class="filter-container">
             <label for="from-date">Từ ngày:</label>
             <input type="date" id="from-date">
@@ -139,5 +165,10 @@
             </table>
         </div>
     </div>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
 </body>
 </html>
