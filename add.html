@@ -20,12 +20,18 @@
         <div class="menu">
             <div class="menu--main">
                 <!-- menu logo -->
-                
+                <a href="#" class="menu--logo">
+                    <img src="./assets/images/ute.png" alt="">
+                    <span>HTTEK</span>
+                </a>
+
                 <!-- menu list -->
                  <ul class="menu--list">
                     <li class="menu--item">
-                        <i class="fa-brands fa-windows"></i> 
-                        <a href="#">Tổng Quan</a>
+                        <a href="#">
+                            <i class="fa-brands fa-windows"></i>
+                            Tổng Quan
+                        </a>
                     </li>
 
                     <li class="menu--item">
@@ -35,7 +41,7 @@
 
                     <li class="menu--item">
                         <i class="fa-solid fa-user-plus"></i>
-                        <a href="#">Thêm Mới Người Dùng</a>
+                        <a href="#">Thêm Người Dùng Mới</a>
                     </li>
 
                     <li class="menu--item">
@@ -69,25 +75,123 @@
                         </button>   
                     </form>
                     <!-- hết thanh tìm kiếm -->
+
+                    <!-- người quản lý -->
+                    <div class="manager">
+                        <div class="manager--name">Vũ Hồ</div>
+                        <div class="manager--image">
+                            <img src="./assets/images/user-meomeo.jfif" alt="">
+                        </div>
+                    </div>
+                    <!-- hết người quản lý -->
                 </div>
-    
+                
+                <!-- body -->
                 <div class="content--body">
                     <div class="content--body-sub">
                         <!-- box title -->
                         <div class="box-title"> 
-                            DANH SÁCH NGƯỜI DÙNG
+                            THÊM NGƯỜI DÙNG
                         </div>
                         <!-- hết boxtitle -->
 
                         <!-- nút thêm người dùng mới -->
-                        <div class="button button-green">
+                        <!-- <div class="button button-green">
                             <i class="fa-solid fa-plus"></i>
                             Thêm Người Dùng
-                        </div>
+                        </div> -->
                         <!-- hết nút thêm người dùng mới -->
                     </div>  
+                    
+                    <form 
+                        action=""
+                        class="form-add"
+                    >
+                        <!-- họ tên -->
+                        <div class="form-item">
+                            <label for="fullName">
+                                <i class="fa-solid fa-signature"></i>
+                                Họ và Tên: 
+                            </label>
+                            <input 
+                                id="fullName"
+                                type="text"
+                                name="fullName"  
+                                placeholder="Nhập họ tên của bạn..."  
+                                autocomplete="off"
+                            >
+                        </div>
 
+                        <!-- số điện thoại -->
+                        <div class="form-item">
+                            <label for="tel">
+                                <i class="fa-solid fa-phone"></i>
+                                Số điện thoại: 
+                            </label>
+                            <input 
+                                id="tel"
+                                type="number"
+                                name="tel"   
+                                placeholder="Nhập số điện thoại của bạn..." 
+                                autocomplete="off"
+                            >
+                        </div>
+
+                        <!-- số phòng -->
+                        <div class="form-item">
+                            <label for="room">
+                                <i class="fa-solid fa-key"></i>
+                                Số phòng: 
+                            </label>
+                            <input 
+                                id="room"
+                                type="text"
+                                name="room"   
+                                placeholder="Nhập số phòng của bạn..." 
+                                autocomplete="off"
+                            >
+                        </div>
+
+                        
+                        <!-- dữ liệu vân tay -->
+                        <div class="form-item">
+                            <label for="fullName">
+                                <i class="fa-solid fa-fingerprint"></i>
+                                Vân tay: 
+                            </label>
+                            <div class="finger">
+                                <img src="./assets/images/fingerprint-wait.png" alt="">
+                            </div>
+                            <!-- <input 
+                                type="password"
+                                name="finger"   
+                                placeholder="Nhập số điện thoại của bạn..." 
+                                readonly
+                                value="abshdjabdajhdbahdsbj"
+                            > -->
+                        </div>
+
+                        <!-- dữ liệu rfid -->
+                        <div class="form-item">
+                            <label for="fullName">
+                                <i class="fa-solid fa-signal"></i>
+                                Thẻ từ: 
+                            </label>
+                            <input 
+                                type="password"
+                                name="finger"   
+                                placeholder="Nhập số điện thoại của bạn..." 
+                                readonly
+                                value="abshdjabdajhdbahdsbj"
+                            >
+                        </div>
+
+                        <button type="submit" class="button button-green">
+                            Thêm mới
+                        </button>
+                    </form>
                 </div>
+                <!-- hết body -->
             </div>
         </div>
         <!-- hết nội dung chính -->
