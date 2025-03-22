@@ -3,23 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch Sử Ra Vào Chung Cư</title>
+    <title>Lịch Sử Ra Vào </title>
     <style>
         h1
         {
             text-align: center;
         }
+       
         :root {
-            --bg-color: rgb(13, 13, 13);
-            --text-color: white;
-            --sidebar-bg: #1e1e1e;
-            --table-bg: #1e1e1e;
-            --table-border: #333;
-            --button-bg: #007bff;
-            --button-text: white;
-        }
-        
-        .light-mode {
             --bg-color: white;
             --text-color: black;
             --sidebar-bg: #f4f4f4;
@@ -29,35 +20,12 @@
             --button-text: white;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .sidebar {
-            width: 190px;
-            background: var(--sidebar-bg);
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            overflow-y: auto;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            flex-grow: 1;
-        }
+       
         .filter-container {
             background: var(--sidebar-bg);
             padding: 15px;
             border-radius: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -82,7 +50,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            min-width: 600px;
+            min-width: 400px;
         }
         th, td {
             padding: 10px;
@@ -91,17 +59,6 @@
         }
         th {
             background: var(--table-border);
-        }
-        .toggle-mode {
-            position: absolute;
-            top: 650px;
-            right: 20px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background: var(--button-bg);
-            color: var(--button-text);
-            cursor: pointer;
         }
         @media (max-width: 768px) {
             .sidebar {
@@ -123,16 +80,44 @@
             }
         }
     </style>
+     <!-- LINK CHÈN ICON -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <button class="toggle-mode" onclick="toggleMode()">Chuyển đổi giao diện</button>
-    <div class="sidebar">
-        <h2>Menu</h2>
-        <p>Dashboard</p>
-        <p>Lịch sử ra vào</p>
-        <p>Cài đặt</p>
-        <p>Đăng ký vân tay mới</p>
-    </div>
+    <div class="wrap">
+        <!-- menu -->
+        <div class="menu">
+            <div class="menu--main">
+                <!-- menu list -->
+                 <ul class="menu--list">
+                    <li class="menu--item">
+                        <i class="fa-brands fa-windows"style="color: white;"></i> 
+                        <a href="#">Tổng Quan</a>
+                    </li>
+                    <li class="menu--item">
+                        <i class="fa-brands fa-wpexplorer"style="color: white;"></i>
+                        <a href="#">Lịch Sử Ra Vào</a>
+                    </li>
+                    <li class="menu--item">
+                        <i class="fa-solid fa-users"style="color: white;"></i>
+                        <a href="#">Quản Lý Người Dùng</a>
+                    </li>
+                
+                    <li class="menu--item">
+                        <i class="fa-solid fa-right-from-bracket"style="color: white;"></i>
+                        <a href="#">Đăng Xuất</a>
+                    </li>
+                    <!-- collapse menu -->
+                <div class="menu--collapse"style="color: white;">
+                    <i class="fa-solid fa-left-long"style="color: white;"></i>
+                    Collapse
+                </div>
+                 </ul>
+            </div>
+        </div>
+        <!-- hết menu -->
     <div class="content">
         <h1>Lịch sử ra vào nhà Huy</h1>
         <div class="filter-container">
@@ -165,10 +150,5 @@
             </table>
         </div>
     </div>
-    <script>
-        function toggleMode() {
-            document.body.classList.toggle('light-mode');
-        }
-    </script>
 </body>
 </html>

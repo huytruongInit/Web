@@ -63,7 +63,7 @@ body {
     width: 250px;
     height: 100vh;
     position: fixed;
-    background-color: var(--w-color-third);
+    background-color: var(--w-color-primary);
     padding: 10px 5px;
 }
 
@@ -83,7 +83,7 @@ body {
 .menu--list .menu--item a {
     margin-left: 5px;
     text-decoration: none;
-    color: var(--w-color-primary);
+    color: var(--w-color-third);
     font-size: 16px;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .menu--list .menu--item:hover, .menu--main .menu--collapse:hover {
-    background-color: var(--w-color-hover-primary);
+    background-color: var(--w-color-hover-third);
 }
 /* hết menu */
 
@@ -117,7 +117,7 @@ body {
     border-radius: 6px;
 
     /* style */
-    background-color: white;
+    background-color: rgb(238, 234, 234);
 
 }
 
