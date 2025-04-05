@@ -1,86 +1,125 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
-    <style>
-        h1 {
-            text-align: center;
-            width: 100%;
-            position: absolute;
-            top: 50px;
-            font-size: 35px;
-            color: rgb(251, 251, 251);
 
-}
-        body {
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            background: url('https://nld.mediacdn.vn/291774122806476800/2023/1/8/33-1673147417818531950343.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-           
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-        input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            text-align: center;
-        }
-        button {
-            width: 80%;
-            padding: 10px;
-            background-color: green;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <!-- Title -->
+    <title>Tổng Quan</title>
+
+    <!-- LINK CHÈN ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <h1 class="title">Hệ Thống Giám Sát Ra Vào</h1>
-    <div class="container">
-        <h2 class="subtitle">Đăng nhập</h2>
-        <form class="form">
-            <div class="input-group">
-                <input class="input-field" type="text" placeholder="Tên của bạn" required>
-                <input class="input-field" type="email" placeholder="Email" required>
-                <input class="input-field" type="password" placeholder="Mật khẩu" required>
-                <button class="submit-button" type="submit">Đăng Ký</button>
+    <!--  -->
+    <div class="wrap">
+        <!-- menu -->
+        <div class="menu">
+            <div class="menu--main">
+                <!-- menu logo -->
+                <a href="#" class="menu--logo">
+                    <img src="./assets/images/ute.png" alt="">
+                    <span>HTTEK</span>
+                </a>
+
+                <!-- menu list -->
+                 <ul class="menu--list">
+                    <li class="menu--item">
+                        <a href="index.html">
+                            <i class="fa-brands fa-windows"></i>
+                            Tổng Quan
+                        </a>
+                    </li>
+
+                    <li class="menu--item">
+                        
+                        <a href="#">
+                            <i class="fa-solid fa-users"></i>
+                            Quản Lý Người Dùng
+                        </a>
+                    </li>
+
+                    <li class="menu--item">
+                       
+                        <a href="#">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Thêm Người Dùng Mới
+                        </a>
+                    </li>
+
+                    <li class="menu--item">
+                        <a href="#">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            Đăng Xuất
+                        </a>
+                    </li>
+                 </ul>
+
+                 <!-- collapse menu -->
+                <div class="menu--collapse">
+                    <i class="fa-solid fa-left-long"></i>
+                    Collapse
+                </div>
             </div>
-        </form>
+        </div>
+        <!-- hết menu -->
+
+        <!-- nội dung chính -->
+        <div class="content">
+            <div class="content--wrap">
+                <div class="content--header">
+                    <!-- thanh tìm kiếm -->
+                    <form action="#" class="form--search">
+                        <input 
+                            type="text" 
+                            name="keyword"
+                            placeholder="Tìm kiếm ..."
+                        >
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>   
+                    </form>
+                    <!-- hết thanh tìm kiếm -->
+
+                    <!-- người quản lý -->
+                    <div class="manager">
+                        <div class="manager--name">Vũ Hồ</div>
+                        <div class="manager--image">
+                            <img src="./assets/images/user-meomeo.jfif" alt="">
+                        </div>
+                    </div>
+                    <!-- hết người quản lý -->
+                </div>
+                
+                <!-- body -->
+                <div class="content--body">
+                    <div class="content--body-sub">
+                        <!-- box title -->
+                        <div class="box-title"> 
+                            TỔNG QUAN
+                        </div>
+                        <!-- hết boxtitle -->
+
+                        <!-- nút thêm người dùng mới -->
+                        <div class="button button-green btn-add-user">
+                            <i class="fa-solid fa-plus"></i>
+                            Thêm Người Dùng
+                        </div>
+                        <!-- hết nút thêm người dùng mới -->
+                    </div>  
+                    
+                </div>
+                <!-- hết body -->
+            </div>
+        </div>
+        <!-- hết nội dung chính -->
     </div>
-   
-</body>
-</html>
-    
-    </script>
+
+
+    <!-- js -->
+    <script type="module" src="./assets/js/index.js"></script>
 </body>
 </html>

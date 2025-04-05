@@ -106,14 +106,17 @@ body {
 }
 
 .menu--list .menu--item a {
-    margin-left: 5px;
+    /* margin-left: 5px; */
     text-decoration: none;
     color: var(--w-color-primary);
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .menu--list .menu--item a i {
-    margin-right: 5px;
+    /* margin-right: 8px; */
 }
 
 .menu--main .menu--collapse {
@@ -329,3 +332,9 @@ body {
     object-fit: cover;
 }
 /* hết người quản lý */
+
+.test {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
