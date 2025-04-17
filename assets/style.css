@@ -295,6 +295,8 @@ body {
 .form-add .form-item .finger {
     width: 80px;
     height: 80px;
+    border-radius: 18%;
+    overflow: hidden;
 }
 
 .form-add .form-item .finger img{

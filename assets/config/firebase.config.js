@@ -1,6 +1,9 @@
 /** CẤU HÌNH FIREBASE */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+import { getAuth  } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +18,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
-export default database;
+const database = getDatabase(app);
+const auth     = getAuth(app);
+
+export { database, auth };

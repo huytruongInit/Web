@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        h1 {    
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 70px;
+            font-size: 35px;
+            color: rgb(251, 251, 251);
+
+}
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+           
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin-top: 40px; /* Điều chỉnh theo ý muốn */
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            text-align:left;
+        }
+        button {
+            width: 80%;
+            padding: 10px;
+            background-color: green;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./assets/images/ute.jpg" alt=""width="100" height="auto">
+        <h2 class="subtitle">Đăng nhập</h2>
+        <form class="form" form-signIn>
+            <div class="input-group">
+                <input 
+                    class="input-field" 
+                    type="email" 
+                    placeholder="Email" 
+                    required
+                    name="email"
+                >
+                <input 
+                    class="input-field" 
+                    type="password" 
+                    placeholder="Mật khẩu" 
+                    required
+                    name="password"
+                >
+                <button class="submit-button" type="submit">Đăng nhập</button>
+            </div>
+        </div>
+
+        <!-- js -->
+        <script type="module" src="./assets/js/auth.js"></script>
+</body>
+</html>
