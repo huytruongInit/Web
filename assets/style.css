@@ -256,6 +256,53 @@ body {
 }
 /* hết button */
 
+
+/* button tính năng */
+.btn {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+.btn-remove {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #C82333;
+}
+
+.btn-warn {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-warn:hover {
+    background-color: #E0A800;
+}
+
+.btn i {
+    margin-right: 3px;
+}
+
+/* hết button tính năng */
+
+
 /* form thêm người dùng mới  */
 .form-add {
     display: flex;
@@ -335,8 +382,38 @@ body {
 }
 /* hết người quản lý */
 
-.test {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+/* Bảng quản lý người dùng */
+.table-manage-cus {
+    border-top: 1px solid #dee2e6;
+    border-collapse: collapse;
+    width: 100%;
 }
+
+.table-manage-cus th {
+    background-color: #F2F2F2;
+    /* border: 1px solid #dee2e6; */
+    border-top: 1px solid #dee2e6;
+    text-align: left;
+    padding: 8px 12px;
+}
+
+.table-manage-cus td {
+    /* border: 1px solid #dee2e6; */
+    border-top: 1px solid #dee2e6;
+    padding: 8px 12px;
+}
+
+.table-manage-cus tbody tr:hover {
+    background-color: #ECECEC;
+}
+
+.table-manage-cus tr:nth-child(even) {
+    background-color: #ECECEC;
+}
+
+.table-manage-cus .td-btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+/* Hết Bảng quản lý người dùng */

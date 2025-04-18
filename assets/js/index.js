@@ -17,9 +17,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
 
-import Swal from 'sweetalert2'
-
-console.log(Swal);
 // Biến lưu trữ userId
 let userId = null;    
 let PATH_TEMPLATE_ID = "";
@@ -110,14 +107,6 @@ if(formRegister) {
         remove(ref(database, `Store/${userId}/template`));
         remove(ref(database, `Store/${userId}/register`));
 
-        await Swal.fire({
-            // position: "",
-            icon: "success",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 2000
-        });
-
         // Chuyển hướng về trang tổng quan
         window.location.href = "index.html";
     });
@@ -151,7 +140,7 @@ setTimeout(() => {
     // LẤY THÔNG TIN MỞ CỬA LƯU VÀO HISTORY
     // Cái isOpen này sẽ chứa những thông tin fingerID hoặc RFID đã mở cửa mà chưa xử lý
     const PATH_STORE_IS_OPEN = `Store/${userId}/isOpen`;
-
+    console.log
     onValue(ref(database, PATH_STORE_IS_OPEN), async (snapIsOpened) => {
         // Nếu có dữ liệu mở cửa chưa được xử lý
         if(snapIsOpened.exists()) {
@@ -163,7 +152,7 @@ setTimeout(() => {
 
                 // Lấy value của key đó
                 const data = itemOpened.val();
-
+                // console.log(data);
                 // tách
                 const arr = key.split('-');
 
@@ -178,10 +167,10 @@ setTimeout(() => {
                         
                         if(cusData[arr[0]] == arr[1]) {
                             // giả lập thời gian
-                            const timestamp = Date.now();
+                            // const timestamp = Date.now(); ~ tương đương biến data phía trên
 
                             // Path lưu trữ
-                            const PATH_HISTORY = `History/${userId}/${cusID}/${timestamp}`;
+                            const PATH_HISTORY = `History/${userId}/${cusID}/${data}`;
 
                             // sẽ lưu mở của lúc mấy giờ, arr[0] chỉ ra fingerID hay RFID biểu thị mở cửa bằng cái gì
                             set(ref(database, PATH_HISTORY), arr[0]); 
@@ -195,10 +184,86 @@ setTimeout(() => {
             });
         }
     });
-        
-    // });
     // HẾT LẤY THÔNG TIN MỞ CỬA LƯU VÀO HISTORY
+
+    // HIỂN THỊ THÔNG TIN NGƯỜI DÙNG BÊN TRANG QUẢN LÝ
+    const tableManageCus = document.querySelector(".table-manage-cus");
+    if(tableManageCus) {
+        const tableBody = tableManageCus.querySelector('tbody');
+
+        const PATH_FOR_MANAGE_CUS = `Home/${userId}`;
+
+        // 
+        onValue(ref(database, PATH_FOR_MANAGE_CUS), (snapCus) => {
+            snapCus.forEach((itemCus, index) => {
+                const cusID = itemCus.key;
+                const cusData  = itemCus.val();
+
+                const newTrElement = document.createElement('tr');
+
+                const html = `
+                    <td>${cusID}</td>
+                    <td>${cusData.fullName}</td>
+                    <td>${cusData.roomId}</td>
+                    <td class="td-btn">
+                        <button class="btn btn-add">
+                            <i class="fa-regular fa-eye"></i>
+                            Xem
+                        </button>
+
+                        <button class="btn btn-warn">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            Sửa
+                        </button>
+
+                        <button 
+                            class="btn btn-remove"
+                            btn-delete = ${cusID}
+                        >
+                            <i class="fa-regular fa-trash-can"></i>
+                            Xóa
+                        </button>
+                    </td>
+                `;
+
+                newTrElement.innerHTML = html;
+                tableBody.appendChild(newTrElement);
+
+                // Xóa người dùng (Trang quản lý người dùng)
+                const btnDeleteCus = tableBody.querySelector(`[btn-delete="${cusID}"]`);
+                if(btnDeleteCus) {
+                    btnDeleteCus.addEventListener("click", event => {
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it!"
+                        })
+                        .then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                              });
+                            }
+                        });
+                    });
+                }
+                // Hết Xóa người dùng (Trang quản lý người dùng)
+
+            });
+        });
+
+
+    }
+    // HẾT HIỂN THỊ THÔNG TIN NGƯỜI DÙNG BÊN TRANG QUẢN LÝ 
 }, 1000);
+
+
 
 
 
